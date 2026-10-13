@@ -3,68 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo de Software - Framework Web</title>
-    <!-- Importación de Bootstrap 5 Framework CSS -->
+    <title>Servicio Web - Autenticación AA5-EV01</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 
-    <!-- Barra de navegación modular -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-code"></i> Proyecto Formativo - AA3-EV01</a>
-            <span class="navbar-text text-white-50">Módulo Web con Framework</span>
-        </div>
-    </nav>
-
-    <!-- Contenedor Principal del Módulo -->
-    <div class="container my-5">
-        <div class="row">
-            
-            <!-- Panel Lateral / Menú de Módulos -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-primary text-white fw-bold">
-                        <i class="fas fa-bars"></i> Menú de Navegación
-                    </div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action active"><i class="fas fa-users"></i> Gestión de Usuarios</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-chart-line"></i> Reportes del Sistema</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-cogs"></i> Configuración del Módulo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel de Contenido Principal -->
-            <div class="col-md-8">
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-success text-white fw-bold">
-                        <i class="fas fa-database"></i> Registro y Control de Módulo
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h4 class="mb-0">Servicio Web de Inicio de Sesión</h4>
+                        <small>Evidencia GA7-220501096-AA5-EV01</small>
                     </div>
                     <div class="card-body">
-                        <p class="text-muted">Formulario estructurado bajo estándares del framework para la captura de información del sistema.</p>
-                        
-                        <!-- Formulario modular -->
-                        <form>
+                        <!-- Formulario que consume el Servicio Web (/api/login) -->
+                        <form action="api/login" method="POST">
                             <div class="mb-3">
-                                <label for="moduloNombre" class="form-label">Nombre del Registro:</label>
-                                <input type="text" class="form-control" id="moduloNombre" placeholder="Ej. Registro de Módulo Web" required>
+                                <label for="usuario" class="form-label">Usuario:</label>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Pruebe con: admin" required>
                             </div>
                             <div class="mb-3">
-                                <label for="moduloDescripcion" class="form-label">Descripción de la Funcionalidad:</label>
-                                <textarea class="form-control" id="moduloDescripcion" rows="3" placeholder="Describa brevemente la tarea..." required></textarea>
+                                <label for="clave" class="form-label">Contraseña:</label>
+                                <input type="password" class="form-control" id="clave" name="clave" placeholder="Pruebe con: 12345" required>
                             </div>
-                            <button type="submit" class="btn btn-success w-100"><i class="fas fa-save"></i> Guardar Módulo</button>
+                            <button type="submit" class="btn btn-primary w-100">Consumir Servicio Web (Login)</button>
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Importación de Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
